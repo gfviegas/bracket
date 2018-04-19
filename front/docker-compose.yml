@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  front:
+    image: node:8
+    container_name: bracket-front
+    working_dir: /var/www/app
+    command: bash -c 'yarn && yarn run dev'
+    volumes:
+      - ./:/var/www/app
+      - ./node_modules:/var/www/app/node_modules
+    ports:
+      - 80:80
